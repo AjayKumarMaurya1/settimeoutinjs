@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: repeating-linear-gradient(to right, rgba(0, 0, 255, 0.712), rgba(255, 0, 0, 0.767));
+        }
+
+        .wapper {
+            max-width: 100vw;
+
+        }
+
+        p {
+            text-align: center;
+            font-size: 48px;
+            color: rgba(0, 0, 255, 0.623);
+            text-shadow: 2px 3px red;
+        }
+
+        div {
+            width: 60%;
+
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wapper">
+        <p id="demo"> <span></span></p>
+        <div class="img">
+
+        </div>
+    </div>
+</body>
+<script>
+
+    var x = new Promise(function (a, myReject) {
+        setTimeout(function () {
+            a('hello friend bro!');
+
+
+            document.querySelector('.img').innerHTML = `<img src="https://media.tenor.com/0YW6tW99bcsAAAAC/meme-laugh.gif" alt="eror"
+        >
+`;
+            document.querySelector("img").style.width = "500px"
+
+
+        }, 3000)
+    })
+    x.then(function (value) {
+        document.querySelector('#demo').innerHTML = value;
+
+    })
+
+
+
+
+
+</script>
+
+</html>
